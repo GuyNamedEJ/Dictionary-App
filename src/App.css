@@ -1,0 +1,226 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root{
+  
+  /*Colors*/
+  --color-white: #FFFFFF;
+  --color-black: #050505;
+  --color-primary: #A445ED;
+  --color-error: #FF5242;
+  
+  /*Font Sizes*/
+  --heading-large: 64px;
+  --heading-medium: 24px;
+  --heading-small: 20px;
+  --body-medium: 18px;
+  --body-small: 14px; 
+  
+}
+
+body{
+  margin: 0;
+}
+
+
+header {
+  display:flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 58px 0;
+}
+
+.container{
+  max-width: 1440px;
+  padding: 40px;
+  margin: auto;
+  min-height: 100vh;
+}
+
+.light-theme {
+  background-color: var(--color-white);
+  color: var(--color-black);
+}
+
+.dark-theme {
+  background-color: var(--color-black);
+  color: var(--color-white);
+  
+}    
+
+.text-mono{
+  font-family: monospace;
+}
+
+.text-sans-serif{
+  font-family: sans-serif;
+}
+
+.text-serif{
+  font-family: serif;
+}
+
+.inputs {
+  display: flex;
+  align-items: center;
+  gap:26px;
+}
+
+.inputs hr{
+  border: 1px solid #E9E9E9;
+  width: 32px;
+  transform: rotate(90deg);
+}
+
+.toggle {
+  display:flex;
+  align-items: center;
+  gap: 20px;
+}
+
+
+.word-display {
+  margin: 45px auto;
+}
+.word {
+  font-size: var(--heading-large);
+}
+
+.phonetic {
+  font-size: var(--heading-medium);
+  color: var(--color-primary)
+}
+
+/*Styles for definitions*/
+.meaning-display{
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.meanings ul{
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+  padding-inline-start: 40px;
+}
+
+.meanings li::marker{
+  color: var(--color-primary);
+}
+
+.meanings 
+.part-of-speech {
+  font-style: italic;
+}
+
+.pos-container{
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.pos-container hr{
+  width: 100%;
+}
+
+
+.searchbar{
+  width: 100%;
+  padding:20px;
+  border-radius: 16px;
+  font-size: var(--heading-small);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*Slider taken from w3 schools*/
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}

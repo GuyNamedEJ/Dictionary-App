@@ -154,7 +154,25 @@ header {
 .error-img{
   border-radius: 20px;
   margin-bottom: 10px;
+  width: 100%;
 }
+
+
+select {
+  /* appearance: none; */
+  /* safari */
+  /* -webkit-appearance: none; */
+  /* other styles for aesthetics */
+  width: 100%;
+  font-size: 1.15rem;
+  padding: 0.675em 6em 0.675em 1em;
+  background-color: #fff;
+  border: none;
+  border-radius: 0.25rem;
+  color: #000;
+  cursor: pointer;
+}
+
 
 
 
@@ -222,7 +240,7 @@ header {
 }
 
 input:checked + .slider {
-  background-color: #2196F3;
+  background-color: var(--color-primary);
 }
 
 input:focus + .slider {

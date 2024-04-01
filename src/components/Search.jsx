@@ -3,7 +3,7 @@ import { SearchContext, ThemeContext } from "../App"
 
 function Search() {
 
-    const [word, setWord] = useState("keyboard")
+    const [word, setWord] = useState(localStorage.getItem("Definition") || "keyboard")
 
     const {setSearchTerm } = useContext(SearchContext)
     const {theme} = useContext(ThemeContext)
@@ -23,7 +23,7 @@ function Search() {
 
   return (
     <form onSubmit={handleSubmit} action="">
-        <input ref={inputRef} className={`searchbar text-${theme.font}`} onChange={handleChange} type="text" value={word} />
+        <input placeholder="Search for a word" ref={inputRef} className={`searchbar text-${theme.font}`} onChange={handleChange} type="text" value={word} />
     </form>
   )
 }

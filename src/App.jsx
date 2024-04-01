@@ -21,7 +21,7 @@ export default function App() {
   };
 
   const [theme, setTheme] = useState(getInitialState);
-  const [searchTerm, setSearchTerm] = useState("keyboard");
+  const [searchTerm, setSearchTerm] = useState(localStorage.getItem("Definition") || "keyboard");
   const [definition, setDefinition] = useState();
 
   const toggleTheme = () => {
@@ -56,8 +56,13 @@ export default function App() {
       setDefinition(data[0]);
     }
 
+
+    localStorage.setItem("Definition", searchTerm);
+
     searchDictionary();
   }, [searchTerm]);
+
+  console.log(localStorage.getItem("Definition"))
 
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme, selectFont }}>

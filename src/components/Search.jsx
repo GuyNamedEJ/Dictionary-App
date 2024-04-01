@@ -11,6 +11,9 @@ function Search() {
     function handleSubmit(event) {
         event.preventDefault()
         setSearchTerm(word)
+        event.target.blur()
+        console.log(event.target)
+        
     }
 
     function handleChange(event) {
@@ -19,7 +22,7 @@ function Search() {
 
   return (
     <form onSubmit={handleSubmit} action="">
-        <input className={`searchbar text-${theme.font}`} onChange={handleChange} type="text" value={word} />
+        <input name="searchTerm" className={`searchbar text-${theme.font}`} onChange={handleChange} type="text" value={word} />
     </form>
   )
 }

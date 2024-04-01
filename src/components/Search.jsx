@@ -1,4 +1,4 @@
-import { useContext, useState } from "react"
+import { useContext, useState, createRef } from "react"
 import { SearchContext, ThemeContext } from "../App"
 
 function Search() {
@@ -7,12 +7,13 @@ function Search() {
 
     const {setSearchTerm } = useContext(SearchContext)
     const {theme} = useContext(ThemeContext)
+
+    let inputRef = createRef()
     
     function handleSubmit(event) {
         event.preventDefault()
         setSearchTerm(word)
-        event.target.blur()
-        console.log(event.target)
+        inputRef.current.blur()
         
     }
 
@@ -22,7 +23,7 @@ function Search() {
 
   return (
     <form onSubmit={handleSubmit} action="">
-        <input name="searchTerm" className={`searchbar text-${theme.font}`} onChange={handleChange} type="text" value={word} />
+        <input ref={inputRef} className={`searchbar text-${theme.font}`} onChange={handleChange} type="text" value={word} />
     </form>
   )
 }
